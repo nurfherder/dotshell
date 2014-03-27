@@ -1,0 +1,15 @@
+# Links for shell configs
+
+# Basic Operation
+# cd ${DIR}
+# ln -s ${SRC} ${DST}
+
+#DIR:SRC:DST
+%HOME%:%HERE%/shenv:.shenv
+%HOME%:%HERE%/profile:.profile
+%HOME%:%HERE%/bashrc:.bashrc
+%HOME%:%HERE%/bash_profile:.bash_profile
+%HOME%:%HERE%/zshenv:.zshenv
+%HOME%:%HERE%/zshrc:.zshrc
+%HOME%:%HERE%/zprofile:.zprofile
+
