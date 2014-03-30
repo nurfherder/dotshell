@@ -1,0 +1,21 @@
+#-----------------------------------------------
+# 'links' file for dotshell project
+# See https://github.com/nurfherder/slink
+#
+# File format:
+#  SymLink_name -> Source_file
+#
+# * Ignore lines that start with '#'
+# * Ignore blank lines (all whitespace chars)
+# * Needed space surrounding delimiter ' -> '
+# * %HOME% is replaced by $HOME
+# * %RWD% this directory relative to link path
+#-----------------------------------------------
+
+%HOME%/.shenv -> %RWD%/shenv
+%HOME%/.profile -> %RWD%/profile
+%HOME%/.bashrc -> %RWD%/bashrc
+%HOME%/.bash_profile -> %RWD%/bash_profile
+%HOME%/.zshenv -> %RWD%/zshenv
+%HOME%/.zshrc -> %RWD%/zshrc
+%HOME%/.zprofile -> %RWD%/zprofile

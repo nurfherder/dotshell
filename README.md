@@ -26,7 +26,7 @@ Deploy:
 **Prerequisites:**
 
  * git
- * linkme.sh
+ * [slink](https://github.com/nurfherder/slink)
  * keychain (_optional_)
  * rbenv (_optional_)
 
@@ -39,7 +39,7 @@ Clone repo to your home directory:
 Create symlinks to config files and fetch submodules:
 
     cd ~/code/dot/dotshell
-    linkme.sh
+    slink
 
 How to determine which config(s) gets read:
 -------------------------------------------
