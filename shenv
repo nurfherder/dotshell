@@ -71,9 +71,30 @@ fi
 if [ -f "$HOME/bin/keychain" ]; then
 if [ $(uname -s) = 'Darwin' ]; then
   #The 'inherit any' gets passphrases in Apple MacOS Keychain
-  eval `keychain --eval --agents ssh --inherit any id_dsa`
+  eval `keychain --eval --agents ssh --inherit any id_rsa id_rsa.github`
 else
   #Everything else runs this command:
-  eval `keychain --eval --agents ssh id_dsa`
+  eval `keychain --eval --agents ssh id_rsa id_rsa.github`
 fi
+fi
+
+
+#===========================================
+# 3) Solarize LS colors
+#===========================================
+
+#-------------------------------------------
+# Solarize LS
+#
+# Pseudo solarized colors for BSD ls on OS X
+# see https://github.com/seebi/dircolors-solarized/issues/10
+# or
+# ANSI-16 color palette dark-solarized for GNU ls
+# see https://github.com/huyz/dircolors-solarized
+#-------------------------------------------
+if [ $(uname -s) = 'Darwin' ]; then
+  CLICOLOR=on; export CLICOLOR
+  LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD; export LSCOLORS
+else
+  :
 fi
