@@ -23,5 +23,5 @@ fi
 # with the bulk of the configuration.
 #------------------------------------------
 if [ -f "${HOME}/.bashrc" ]; then
-  ". $HOME/.bashrc"
+  . "$HOME/.bashrc"
 fi
