@@ -14,6 +14,11 @@
 # Source in .shrc . This is the bulk of the
 # configuration.
 #------------------------------------------
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+
 if [ -f "$HOME/.shenv" ]; then
   . "$HOME/.shenv"
 fi
+
+export PS1="\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
