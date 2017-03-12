@@ -54,7 +54,7 @@ fi
 #  this last.
 #-------------------------------------------
 if [ -d "$HOME/.rbenv/bin" ]; then
-  PATH="$HOME/.rbenv/bin:$PATH"
+  PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
   export PATH
   eval "$(rbenv init -)"
 fi
