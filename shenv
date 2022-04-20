@@ -71,7 +71,7 @@ fi
 if [ -f "$HOME/bin/keychain" ]; then
 if [ $(uname -s) = 'Darwin' ]; then
   #The 'inherit any' gets passphrases in Apple MacOS Keychain
-  eval `keychain --eval --agents ssh --inherit any id_rsa id_rsa.github`
+  eval `keychain --eval --agents ssh --inherit any id_rsa id_rsa.github id_ed25519.github`
 else
   #Everything else runs this command:
   eval `keychain --eval --agents ssh id_rsa id_rsa.github`
