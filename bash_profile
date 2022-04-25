@@ -11,17 +11,17 @@
 # to ~/.shrc or ~/.profile (if for login)
 #==========================================
 
-# Don't double source-in shenv
-#------------------------------------------
-# Source in profile
-#------------------------------------------
-#if [ -f "${HOME}/.profile" ]; then
-#  . "$HOME/.profile"
-#fi
 
 #------------------------------------------
-# Source in bashrc. bashrc will load shenv
-# with the bulk of the configuration.
+# Source in basic POSIX profile
+#------------------------------------------
+if [ -f "${HOME}/.profile" ]; then
+  . "$HOME/.profile"
+fi
+
+#------------------------------------------
+# Source in bashrc for idempotent bash
+# specific settings
 #------------------------------------------
 if [ -f "${HOME}/.bashrc" ]; then
   . "$HOME/.bashrc"
