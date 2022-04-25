@@ -10,77 +10,13 @@
 #-------------------------------------------
 # Add site specific settings
 #-------------------------------------------
-if [ -f "$HOME/.shenv.work" ]; then
+if [ -f "$HOME/.shenv.site" ]; then
   . "$HOME/.shenv.site"
 fi
 
-#===========================================
-# 1) Build PATH prefixes
-#===========================================
-
-#-------------------------------------------
-# OS X: homebrew
-# Get missing opensource software
-#
-# This needs to be nearly first in the path
-# in order to override system binaries.
-#-------------------------------------------
-if [ $(uname -s) = 'Darwin' ]; then
-if [ -f '/usr/local/bin/brew' ]; then
-  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-  export PATH
-fi
-fi
-
-
-#-------------------------------------------
-# Add my executables
-#
-# ~/bin
-# ~/bin/exe-{OS}-{ARCH}/
-#-------------------------------------------
-PATH="$HOME/bin:$PATH";export PATH
-MYEXES="$HOME/bin/exe-$(uname -s)-$(uname -m)"
-if [ -d "$MYEXES" ]; then
-  PATH="$MYEXES:$PATH"; export PATH
-fi
-
-#-------------------------------------------
-# rbenv
-#  Manage different versions of ruby.
-#  See http://rbenv.org/
-#
-#  This needs to be first in the path, so add
-#  this last.
-#-------------------------------------------
-if [ -d "$HOME/.rbenv/bin" ]; then
-  PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-  export PATH
-  eval "$(rbenv init -)"
-fi
-
 
 #===========================================
-# 2) Use SSH Agent if already running
-#===========================================
-#-------------------------------------------
-# FunToo Keychain
-#  Share ssh key between shell sessions.
-#  See https://github.com/funtoo/keychain
-#-------------------------------------------
-if [ -f "$HOME/bin/keychain" ]; then
-if [ $(uname -s) = 'Darwin' ]; then
-  #The 'inherit any' gets passphrases in Apple MacOS Keychain
-  eval `keychain --eval --agents ssh --inherit any id_rsa id_rsa.github id_ed25519.github`
-else
-  #Everything else runs this command:
-  eval `keychain --eval --agents ssh id_rsa id_rsa.github`
-fi
-fi
-
-
-#===========================================
-# 3) Solarize LS colors
+# 1) Solarize LS colors
 #===========================================
 
 #-------------------------------------------
